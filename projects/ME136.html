@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ME136 - Quadcopter Control Lab</title>
+</head>
+
+<body>
+
+<h1>ME136 – Quadcopter Estimation and Control Lab</h1>
+
+<img src="../assets/images/ME136_Prev.png" width="500">
+
+<h2>Overview</h2>
+<p>
+This project focused on the modeling, estimation, and closed-loop control of a quadcopter system. The goal was to improve hover stability and flight performance using sensor fusion, state estimation, and hierarchical control design.
+</p>
+
+<h2>Team Members</h2>
+<ul>
+    <li>Noah Koch</li>
+    <li>Jason Khatkar</li>
+    <li>Ryan Montis</li>
+</ul>
+
+<h2>My Contributions</h2>
+<ul>
+    <li>Developed simulation and control code for quadcopter dynamics</li>
+    <li>Implemented state estimation and sensor fusion logic</li>
+    <li>Designed and tuned control loops for stability and performance</li>
+    <li>Created plots, analysis, and conceptual explanations for report sections</li>
+</ul>
+
+<h2>System Description</h2>
+<p>
+The quadcopter system was modeled using IMU (accelerometer + gyroscope), optical flow, and height sensor data. A complementary estimator was used to compute roll, pitch, yaw, position, and velocity states.
+</p>
+
+<h2>Control Architecture</h2>
+<ul>
+    <li>Attitude estimation using gyro integration + accelerometer correction</li>
+    <li>Velocity estimation using optical flow and height correction</li>
+    <li>Position estimation via velocity integration</li>
+    <li>Hierarchical control: position → velocity → attitude → motor commands</li>
+</ul>
+
+<h2>Key Improvements Made</h2>
+<ul>
+    <li>Added position control loop to improve hover stability</li>
+    <li>Tuned rate and angle time constants for damping performance</li>
+    <li>Improved horizontal velocity estimation stability</li>
+    <li>Adjusted control gains to extend stable flight duration</li>
+</ul>
+
+<h2>Results</h2>
+<p>
+The system achieved approximately 72 seconds of stable flight before instability and wall collision. The main limiting factors were sensor noise (especially optical flow) and positional drift over time.
+</p>
+
+<h2>Limitations</h2>
+<ul>
+    <li>Optical flow noise introduced instability in horizontal velocity estimation</li>
+    <li>Position drift accumulated due to sensor uncertainty</li>
+    <li>Performance limited by estimator accuracy rather than controller structure</li>
+</ul>
+
+<h2>Report</h2>
+<a href="../assets/reports/ME136_Lab_5_Report.pdf" target="_blank">
+    View Full Lab Report (PDF)
+</a>
+
+<br><br>
+
+<a href="../index.html">← Back to Home</a>
+
+</body>
+</html>

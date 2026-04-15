@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeskLift - ME130 Mechanical Design Project</title>
+</head>
+
+<body>
+
+<h1>DeskLift – Ergonomic Adjustable Desk Platform (ME130)</h1>
+
+<img src="../assets/images/ME130_Prev.gif" width="500">
+
+<h2>Overview</h2>
+<p>
+DeskLift is a mechanical design project focused on improving ergonomic workspace efficiency. The system lifts a portion of a desk surface using a motor-driven four-bar linkage, allowing users to alternate between a flat workspace and an elevated platform for keyboards or documents.
+</p>
+
+<h2>Team Members</h2>
+<ul>
+    <li>Jacob Gottesman</li>
+    <li>Jason Khatkar</li>
+    <li>Jeno Pangan</li>
+</ul>
+
+<h2>Problem Statement</h2>
+<p>
+Modern desk setups often suffer from limited usable space due to keyboards, monitors, and accessories occupying the surface. This project addresses the need for dynamic workspace reconfiguration without manually moving equipment.
+</p>
+
+<h2>Solution Summary</h2>
+<p>
+We designed a collapsible four-bar linkage mechanism that raises a desk platform from a flat position to an elevated position (up to ~95°). The system is motor-driven and allows quick switching between configurations to increase usable workspace.
+</p>
+
+<h2>Key Specifications</h2>
+<ul>
+    <li>Load capacity: 5–8 lbs</li>
+    <li>Motion range: 0°–95°</li>
+    <li>Actuation time: 1–4 seconds</li>
+    <li>Actuator: DC motor with encoder</li>
+    <li>Control: ESP32-based switch system</li>
+</ul>
+
+<h2>Mechanical Design</h2>
+<ul>
+    <li>Four-bar linkage with toggle locking positions</li>
+    <li>Plywood structural frame with aluminum reinforcement</li>
+    <li>Gear reduction system (4:1) for torque amplification</li>
+    <li>Integrated locking behavior at top and bottom positions</li>
+</ul>
+
+<h2>Electrical & Control System</h2>
+<ul>
+    <li>ESP32 microcontroller for motor control</li>
+    <li>DC geared motor with encoder feedback</li>
+    <li>Push-button activation system</li>
+    <li>Power supply integrated into base housing</li>
+</ul>
+
+<h2>Analysis & Validation</h2>
+
+<h3>Kinematics & Motion</h3>
+<p>
+The system was designed to achieve rapid motion between two stable toggle positions. Motion speed was tuned to balance usability and structural loading during acceleration and deceleration phases.
+</p>
+
+<h3>Structural Analysis</h3>
+<p>
+Worst-case loading analysis assumed a 1.5 kg downward force applied to the platform. Results showed a maximum deflection of approximately 0.5 mm and a maximum stress of 44 MPa, which remains below the material yield strength (57.9 MPa).
+</p>
+
+<h2>Key Challenges</h2>
+<ul>
+    <li>High dynamic loads during rapid motion transitions</li>
+    <li>Motor calibration without load leading to performance issues under real conditions</li>
+    <li>Sensorless position control required careful mechanical constraint design</li>
+</ul>
+
+<h2>Design Improvements (Future Work)</h2>
+<ul>
+    <li>Add adjustable speed control for different user preferences</li>
+    <li>Integrate built-in desk design instead of add-on platform</li>
+    <li>Improve safety by relocating activation switch</li>
+    <li>Add load-aware control for more robust operation</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>
+DeskLift demonstrates a practical ergonomic solution using a four-bar linkage system combined with simple motor control. The design successfully improves usable desk space while maintaining compact mechanical packaging and stable toggle behavior.
+</p>
+
+<h2>Report</h2>
+<a href="../assets/reports/ME130FinalProject.pdf" target="_blank">
+    View Full Report (PDF)
+</a>
+
+<br><br>
+
+<a href="../index.html">← Back to Home</a>
+
+</body>
+</html>
