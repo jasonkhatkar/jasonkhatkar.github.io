@@ -10,27 +10,81 @@
 
 <img src="../assets/images/ME100_Prev.jpg" width="500">
 
-<h2>Summary</h2>
+<h2>Overview</h2>
 <p>
-We designed a wearable IoT-based fall detection system for elderly users.
-It uses multiple sensors (IMU + ultrasonic + GPS) to detect falls and trigger both local alerts and remote notifications to caregivers or emergency responders.
+This project is an IoT-enabled fall detection system designed to be embedded into wearable clothing for elderly users.
+The system detects falls using a combination of inertial sensing and proximity sensing, and then triggers alerts and remote notifications to caregivers or authorities.
 </p>
 
-<h2>Key Features</h2>
+<h2>Problem Statement</h2>
+<p>
+Falls among elderly individuals often go undetected, especially if the person is unconscious or unable to call for help.
+The goal of this system is to detect a fall reliably, minimize false positives, and immediately trigger both local and remote alerts.
+</p>
+
+<h2>System Design</h2>
+<p>
+The system combines multiple sensors to improve reliability:
+</p>
+
 <ul>
-    <li>Multi-sensor fall detection (MPU6050 + ultrasonic)</li>
-    <li>IoT data transmission via ESP32 (Adafruit)</li>
-    <li>GPS location sent for emergency response</li>
-    <li>Vibration motor + buzzer for local alerting</li>
+    <li>MPU6050 accelerometer/gyroscope for tilt and orientation detection</li>
+    <li>Ultrasonic sensor for sudden proximity changes</li>
+    <li>DHT11 temperature sensor for environmental monitoring</li>
+    <li>GT-U7 GPS module for location tracking</li>
+    <li>ESP32 microcontroller for processing and IoT communication</li>
     <li>NFC tag for storing medical information</li>
 </ul>
 
-<h2>Highlights</h2>
+<h2>Operation Logic</h2>
+<p>
+The system continuously reads sensor data and evaluates fall conditions based on:
+</p>
+
 <ul>
-    <li>Reduced false positives using multi-condition trigger logic</li>
-    <li>Integrated 6 different sensors into one embedded system</li>
-    <li>Implemented real-time IoT alerting system</li>
+    <li>Body tilt exceeding approximately 45 degrees</li>
+    <li>Sudden proximity change detected by ultrasonic sensor</li>
 </ul>
+
+<p>
+When a fall is detected:
+</p>
+
+<ul>
+    <li>Temperature and GPS data are transmitted via IoT (Adafruit platform)</li>
+    <li>GPS location is sent via email for emergency response</li>
+    <li>Buzzer and vibration motor are activated to alert the user and surroundings</li>
+</ul>
+
+<p>
+When the user returns to a stable upright position, local alerts stop while emergency data remains available for responders.
+</p>
+
+<h2>Key Contributions</h2>
+<ul>
+    <li>Integrated 6 different sensors into a unified embedded system</li>
+    <li>Developed logic to reduce false positives using multi-sensor validation</li>
+    <li>Implemented IoT communication for real-time monitoring</li>
+    <li>Designed alert system using vibration and audio feedback</li>
+</ul>
+
+<h2>Challenges</h2>
+<p>
+One major challenge was handling inconsistent GPS data formatting and signal acquisition delays, which affected timing in the control loop.
+Additionally, integrating sensors originally designed for Arduino required significant effort in parsing and synchronization.
+</p>
+
+<h2>Outcome</h2>
+<p>
+The final system successfully demonstrated multi-sensor fall detection with reduced false positives compared to single-sensor systems.
+</p>
+
+<h2>Demo</h2>
+<p>
+<a href="https://youtu.be/ErTkxw-7A74" target="_blank">
+View Project Video
+</a>
+</p>
 
 <h2>Report</h2>
 <p>
@@ -39,7 +93,9 @@ View Full Project Report
 </a>
 </p>
 
+
 <br>
+
 <a href="../index.html">← Back to Home</a>
 
 </body>
