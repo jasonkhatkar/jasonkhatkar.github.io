@@ -1,66 +1,270 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Wind Turbine Project - ME102B</title>
+    <meta charset="UTF-8">
+    <title>Wind Turbine Design | Jason Khatkar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 80px 30px 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 800px;
+        }
+
+        /* CONTENT WRAPPER */
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 30px 80px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 16px;
+            margin: 30px 0;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* SECTIONS */
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 50px;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            color: #cbd5e1;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* METRICS GRID */
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .metric {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 16px;
+            border-radius: 14px;
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-top: 5px;
+            color: white;
+        }
+
+        /* INSIGHT BOX */
+
+        .insights {
+            background: rgba(59,130,246,0.08);
+            border: 1px solid rgba(59,130,246,0.25);
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+
+        /* FOOTER NAV */
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .button {
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<h1>Wind Turbine Design Project</h1>
+    <div class="hero">
 
-<img src="../assets/images/E26_Prev.png" width="500">
+        <h1>Wind Turbine Design</h1>
 
-<h2>Overview</h2>
-<p>
-This project focused on designing and building a small-scale horizontal-axis wind turbine to convert wind energy into electrical power. The system included a 3D-printed rotor, structural tower, and generator housing designed within strict size and weight constraints.
-</p>
+        <p>
+            Designed and analyzed a small-scale horizontal-axis wind turbine
+            focused on structural stability, aerodynamic efficiency, and
+            experimental performance validation under constrained design requirements.
+        </p>
 
-<h2>Project Goals</h2>
-<ul>
-    <li>Design and fabricate a functional wind turbine system using SolidWorks</li>
-    <li>Maximize electrical power output under wind loading conditions</li>
-    <li>Ensure structural stability under mechanical deflection testing</li>
-    <li>Meet strict constraints on size, height, and 3D printing volume</li>
-</ul>
+    </div>
 
-<h2>Design Summary</h2>
-<p>
-The turbine design was a three-blade horizontal-axis system with a blade angle of attack of 4.5 degrees. The tower was constructed as a two-level structure to improve stiffness and stability, with reinforced corner supports to distribute load more effectively. Finite Element Analysis (FEA) was performed in SolidWorks to evaluate stress distribution, displacement, and safety factors before fabrication.
-</p>
+    <div class="container">
 
-<h2>Testing & Performance</h2>
-<ul>
-    <li>Maximum power output: <b>0.061 W</b></li>
-    <li>Measured tower stiffness: <b>0.6405 lbf/mm</b></li>
-    <li>Maximum deflection under load: <b>1.41 mm</b></li>
-    <li>Wind condition: ~28 mph fan-generated airflow</li>
-</ul>
+        <img src="../assets/images/E26_Prev.png">
 
-<p>
-Testing revealed that while the turbine successfully generated electrical power, performance was limited due to tower height shortfall and suboptimal blade aerodynamics. The reduced height (14.25 in vs. 16 in requirement) affected airflow alignment with the rotor.
-</p>
+        <h2>Project Overview</h2>
 
-<h2>Key Engineering Insights</h2>
-<ul>
-    <li>Blade geometry significantly impacted rotational efficiency and power output</li>
-    <li>Structural stiffness correlated strongly with tower geometry and reinforcement layout</li>
-    <li>FEA results closely matched experimental trends but differed due to real-world alignment and setup errors</li>
-    <li>System performance was highly sensitive to small geometric deviations</li>
-</ul>
+        <p>
+            This project involved designing and fabricating a compact wind turbine system
+            capable of converting airflow into electrical power under strict geometric and
+            manufacturing constraints. The system included a 3D-printed rotor, structural tower,
+            and generator housing designed using SolidWorks.
+        </p>
 
-<h2>Conclusion</h2>
-<p>
-The project demonstrated the full engineering design cycle including conceptual design, CAD modeling, simulation, fabrication, and experimental testing. Although performance targets were not fully met, the system successfully generated electrical power and provided strong insight into wind turbine aerodynamics and structural design tradeoffs.
-</p>
+        <h2>Key Design Constraints</h2>
 
-<h2>Report</h2>
-<a href="../assets/reports/E26 Project Report - Group 9.pdf target="_blank">
-    View Full Technical Report (PDF)
-</a>
+        <ul>
+            <li>Limited 3D printing volume and material constraints</li>
+            <li>Height restriction: 14.25 in (vs. 16 in target requirement)</li>
+            <li>Structural stability under wind loading and vibration</li>
+            <li>Maximize electrical output efficiency</li>
+        </ul>
 
-<br><br>
+        <h2>Engineering Approach</h2>
 
-<a href="../index.html">← Back to Home</a>
+        <p>
+            The turbine used a three-blade horizontal-axis configuration with a 4.5° blade pitch angle.
+            Structural design emphasized stiffness and load distribution through a reinforced two-level tower
+            geometry. Finite Element Analysis (SolidWorks) was used to evaluate stress, displacement,
+            and safety factors prior to fabrication.
+        </p>
+
+        <h2>Performance Results</h2>
+
+        <div class="metrics">
+
+            <div class="metric">
+                Power Output
+                <strong>0.061 W</strong>
+            </div>
+
+            <div class="metric">
+                Tower Stiffness
+                <strong>0.6405 lbf/mm</strong>
+            </div>
+
+            <div class="metric">
+                Max Deflection
+                <strong>1.41 mm</strong>
+            </div>
+
+            <div class="metric">
+                Wind Condition
+                <strong>~28 mph airflow</strong>
+            </div>
+
+        </div>
+
+        <p>
+            The system successfully generated electrical power, though performance was limited
+            by reduced tower height and alignment sensitivity affecting rotor exposure to airflow.
+        </p>
+
+        <h2>Key Engineering Insights</h2>
+
+        <div class="insights">
+
+            <ul>
+                <li>Blade geometry had a dominant effect on rotational efficiency and power output</li>
+                <li>Structural stiffness strongly depended on tower reinforcement layout</li>
+                <li>FEA trends matched experimental behavior but deviated due to real-world setup errors</li>
+                <li>System performance was highly sensitive to small geometric deviations</li>
+            </ul>
+
+        </div>
+
+        <h2>Conclusion</h2>
+
+        <p>
+            This project demonstrated a complete engineering workflow including conceptual design,
+            CAD modeling, simulation, fabrication, and experimental testing. While target performance
+            was not fully achieved, the system validated core aerodynamic and structural design principles
+            in a constrained engineering environment.
+        </p>
+
+        <h2>Report</h2>
+
+        <a class="button"
+           href="../assets/reports/E26 Project Report - Group 9.pdf"
+           target="_blank">
+
+            View Full Technical Report
+
+        </a>
+
+        <div class="footer">
+
+            <a class="button" href="../index.html">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
 
 </body>
+
 </html>

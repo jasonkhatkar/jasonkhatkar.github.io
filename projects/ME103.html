@@ -1,59 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Airfoil Lift Characterization</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Airfoil Lift Characterization | Jason Khatkar</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 24px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #94a3b8;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 800px;
+        }
+
+        .hero img {
+            width: 100%;
+            border-radius: 18px;
+            margin-top: 30px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 18px;
+            padding: 24px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            padding-left: 18px;
+            color: #cbd5e1;
+        }
+
+        p {
+            color: #cbd5e1;
+        }
+
+        .highlight {
+            margin-top: 30px;
+            padding: 20px;
+            border-left: 3px solid #60a5fa;
+            background: rgba(59,130,246,0.08);
+            border-radius: 10px;
+        }
+
+        .report-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 16px;
+            border-radius: 10px;
+            background: white;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<a href="../index.html">← Back to Home</a>
+<div class="container">
 
-<h1>Lift Characterization of an Unknown Airfoil</h1>
+    <a class="back" href="../index.html">← Back to Home</a>
 
-<img src="../assets/images/ME103_Prev.jpg" width="500">
+    <!-- HERO -->
 
-<h2>Overview</h2>
-<p>
-This experiment investigated the aerodynamic lift characteristics of an unknown airfoil profile using wind tunnel testing. The goal was to determine the relationship between coefficient of lift (Cₗ), angle of attack, and Reynolds number, and to compare experimental results against classical aerodynamic theory.
-</p>
+    <div class="hero">
 
-<h2>Problem Statement</h2>
-<p>
-The objective was to characterize the lift behavior of an unknown airfoil by experimentally measuring lift forces across a range of angles of attack and flow velocities, and then computing lift coefficients under varying Reynolds numbers.
-</p>
+        <h1>Airfoil Lift Characterization</h1>
 
-<h2>Approach</h2>
-<ul>
-    <li>Conducted wind tunnel testing across multiple flow speeds</li>
-    <li>Varied angle of attack from -16° to +16°</li>
-    <li>Measured lift force using a calibrated strain gauge system</li>
-    <li>Measured velocity using both pitot-tube pressure transducer and anemometer</li>
-    <li>Performed dual-sensor cross-validation for velocity measurements</li>
-</ul>
+        <p>
+            Experimental investigation of lift behavior for an unknown airfoil using wind tunnel testing,
+            focusing on the relationship between lift coefficient, angle of attack, and Reynolds number.
+        </p>
 
-<h2>Key Methods</h2>
-<p>
-Raw sensor outputs were calibrated using linear and polynomial regression models to convert voltage signals into physical quantities such as force, pressure, and velocity. Uncertainty propagation was applied to account for measurement error from sensors, calibration fits, and geometric parameters.
-</p>
+        <img src="../assets/images/ME103_Prev.jpg">
 
-<h2>Key Results</h2>
-<ul>
-    <li>Lift coefficient exhibited near-linear behavior for small angles of attack</li>
-    <li>Clear stall behavior observed beyond higher angles</li>
-    <li>Symmetric lift response for positive and negative angles</li>
-    <li>Results consistent across multiple Reynolds numbers (~69k–160k)</li>
-    <li>Strong agreement between anemometer-based and pitot-derived velocities</li>
-</ul>
+    </div>
 
-<h2>Engineering Insights</h2>
-<p>
-The airfoil demonstrated symmetric lift characteristics, indicating balanced aerodynamic performance. While limited by wind tunnel velocity constraints, the results align closely with theoretical expectations for symmetric airfoil behavior in low Reynolds number regimes.
-</p>
+    <!-- MAIN GRID -->
 
-<h2>Report</h2>
-<a href="../assets/reports/ME103_Final_Project_Report (1).pdf" target="_blank">
-    View Full Technical Report (PDF)
-</a>
+    <div class="grid">
+
+        <div class="card">
+            <h2>Objective</h2>
+            <p>
+                Characterize aerodynamic lift behavior of an unknown airfoil by measuring lift forces across
+                varying angles of attack and flow velocities, and compute lift coefficients under different Reynolds numbers.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Approach</h2>
+            <ul>
+                <li>Wind tunnel testing across multiple flow speeds</li>
+                <li>Angle of attack sweep: -16° to +16°</li>
+                <li>Lift measured using calibrated strain gauge system</li>
+                <li>Velocity measured via pitot tube + anemometer cross-validation</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h2>Key Methods</h2>
+            <p>
+                Sensor outputs were calibrated using regression models to convert voltage signals into
+                physical quantities (force, pressure, velocity). Uncertainty propagation accounted for
+                measurement noise, calibration error, and geometric tolerances.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Results</h2>
+            <ul>
+                <li>Linear lift response at small angles of attack</li>
+                <li>Clear stall behavior at higher angles</li>
+                <li>Symmetric lift curve for ± angles</li>
+                <li>Consistent behavior across Reynolds numbers (~69k–160k)</li>
+                <li>Strong agreement between velocity measurement methods</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- INSIGHT -->
+
+    <div class="highlight">
+
+        <h2>Engineering Insight</h2>
+
+        <p>
+            The airfoil exhibited symmetric lift characteristics consistent with theoretical expectations for
+            symmetric profiles at low Reynolds numbers. Despite wind tunnel limitations, experimental results
+            closely matched predicted aerodynamic trends, validating both measurement approach and calibration methods.
+        </p>
+
+    </div>
+
+    <!-- REPORT -->
+
+    <a class="report-link"
+       href="../assets/reports/ME103_Final_Project_Report (1).pdf"
+       target="_blank">
+
+        View Full Technical Report (PDF)
+
+    </a>
+
+</div>
 
 </body>
 </html>

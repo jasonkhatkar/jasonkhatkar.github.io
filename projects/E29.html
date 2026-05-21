@@ -1,95 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>E29 Group 6 - Multi-Function Phone Case</title>
+    <meta charset="UTF-8">
+    <title>Multi-Function Phone Case | Jason Khatkar</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 80px 24px;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            max-width: 750px;
+            margin: auto;
+            font-size: 1.1rem;
+        }
+
+        .hero img {
+            margin-top: 40px;
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* SECTIONS */
+
+        section {
+            margin-top: 70px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            color: #94a3b8;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* CARDS */
+
+        .highlight-box {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 20px;
+            border-radius: 14px;
+            margin-top: 20px;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.08);
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        /* LINKS */
+
+        .links a {
+            display: inline-block;
+            margin-right: 15px;
+            margin-top: 10px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back {
+            margin-top: 60px;
+            display: inline-block;
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+    </style>
 </head>
 
 <body>
 
-<h1>E29 Group 6 - Multi-Function Phone Case System</h1>
+<div class="container">
 
-<img src="../assets/images/E29_Prev.jpg" width="500">
+    <!-- HERO -->
+    <div class="hero">
 
-<p>
-A multifunctional phone case system designed to integrate protective casing with embedded utility tools while balancing manufacturability, material constraints, and fit precision.
-</p>
+        <h1>Multi-Function Phone Case System</h1>
 
-<hr>
+        <p>
+            Designed a modular protective phone case integrating embedded utility tools,
+            balancing manufacturability, precision tolerances, and multi-process fabrication constraints.
+        </p>
 
-<h2>Project Overview</h2>
-<p>
-This project focused on designing a modular phone case system consisting of multiple functional layers, including an inner phone case, outer protective structure, and integrated multi-tool component. The design required careful material selection, tolerance control, and manufacturability analysis across multiple fabrication methods.
-</p>
+        <img src="../assets/images/E29_Prev.jpg">
 
-<h2>Design Objectives</h2>
-<ul>
-    <li>Create a functional protective phone case system</li>
-    <li>Integrate utility tools (knife, firestarter, screwdriver, bottle opener)</li>
-    <li>Ensure manufacturability using available lab resources</li>
-    <li>Balance flexibility, durability, and precision</li>
-</ul>
+        <div class="tag-row">
+            <div class="tag">Product Design</div>
+            <div class="tag">DFM</div>
+            <div class="tag">CAD</div>
+            <div class="tag">Manufacturing</div>
+        </div>
 
-<h2>Material & Process Selection</h2>
-<p>
-Multiple material-process combinations were evaluated based on flexibility, durability, tolerance capability, and manufacturability constraints.
-</p>
+    </div>
 
-<ul>
-    <li><b>TPU (NinjaFlex) - 3D Printed</b>: Selected for inner phone case due to flexibility, adjustability, and ease of iteration.</li>
-    <li><b>PLA - 3D Printed</b>: Used for prototype components due to ease of printing and fast iteration.</li>
-    <li><b>Steel - Fablight machining</b>: Selected for tool components requiring high durability, hardness, and tight tolerances.</li>
-</ul>
+    <!-- OVERVIEW -->
+    <section>
+        <h2>Project Overview</h2>
 
-<p>
-Tradeoffs included flexibility vs. durability, tolerance precision vs. manufacturability time, and material rigidity vs. usability.
-</p>
+        <p>
+            Developed a modular phone case system consisting of an inner flexible case,
+            outer protective shell, and integrated multi-tool component. The system required
+            coordination across multiple manufacturing methods while maintaining precise fit
+            between interfacing components.
+        </p>
 
-<h2>Fit & Tolerancing</h2>
-<p>
-The system required multiple precision fits including rotational joints and interference fits to ensure structural stability and usability.
-</p>
+        <div class="highlight-box">
+            Focus: multi-material design, tight tolerancing, and manufacturability under constrained fabrication methods.
+        </div>
+    </section>
 
-<ul>
-    <li>Rotational joints used RT6 tolerance classes</li>
-    <li>Interference fits used for structural alignment between layers</li>
-    <li>Critical dimensions ranged from ~0.05 mm to ~0.08 mm tolerances</li>
-</ul>
+    <!-- DESIGN OBJECTIVES -->
+    <section>
+        <h2>Design Objectives</h2>
 
-<p>
-Manufacturing feasibility analysis confirmed that selected processes were capable of achieving required tolerances.
-</p>
+        <ul>
+            <li>Develop a functional protective phone case system with integrated utility tools</li>
+            <li>Ensure manufacturability using available lab processes (3D printing + machining)</li>
+            <li>Balance durability, flexibility, and user ergonomics</li>
+            <li>Maintain precise fit across multi-layer assembly</li>
+        </ul>
+    </section>
 
-<h2>Key Engineering Considerations</h2>
-<ul>
-    <li>Material flexibility vs structural rigidity tradeoffs</li>
-    <li>Multi-process manufacturing coordination</li>
-    <li>Precision alignment between layered components</li>
-    <li>User ergonomics and usability constraints</li>
-</ul>
+    <!-- ENGINEERING DECISIONS -->
+    <section>
+        <h2>Materials & Manufacturing Strategy</h2>
 
-<h2>Video Demo</h2>
-<a href="https://youtu.be/y9c9ROYRFO4" target="_blank">
-    View Project Video
-</a>
+        <p>
+            Material selection was driven by tradeoffs between flexibility, strength, and fabrication constraints.
+        </p>
 
-<h2>Final Deliverables</h2>
-<ul>
-    <li>Final design iterations</li>
-    <li>Manufacturing and process selection table</li>
-    <li>Fit and tolerancing analysis</li>
-    <li>Prototype evaluation and refinement</li>
-</ul>
+        <ul>
+            <li><b>TPU (NinjaFlex)</b> — inner case for flexibility and impact absorption</li>
+            <li><b>PLA</b> — rapid iteration prototypes for form and fit testing</li>
+            <li><b>Steel (Fablight machining)</b> — high-strength tool components requiring tight tolerances</li>
+        </ul>
 
-<h2>Report</h2>
-<p>
-<a href="../assets/reports/E29Group6FinalReport.pdf" target="_blank">
-    View Full Report (PDF)
-</a>
-</p>
+        <div class="highlight-box">
+            Key Tradeoff: flexibility vs structural rigidity vs manufacturability time.
+        </div>
+    </section>
 
-<br>
+    <!-- FIT & TOLERANCING -->
+    <section>
+        <h2>Fit, Assembly & Tolerancing</h2>
 
-<a href="../index.html">← Back to Home</a>
+        <p>
+            Designed multi-part assembly requiring controlled fits between layers, including rotational joints and interference fits.
+        </p>
+
+        <ul>
+            <li>RT6 tolerance class applied for rotational interfaces</li>
+            <li>Interference fits used for structural alignment and retention</li>
+            <li>Critical dimensions controlled within ~0.05–0.08 mm range</li>
+        </ul>
+
+        <div class="highlight-box">
+            Manufacturing feasibility confirmed across additive and subtractive processes for required tolerances.
+        </div>
+    </section>
+
+    <!-- KEY ENGINEERING INSIGHT -->
+    <section>
+        <h2>Key Engineering Considerations</h2>
+
+        <ul>
+            <li>Multi-process manufacturing coordination (3D printing + machining)</li>
+            <li>Mechanical interface alignment across layered assembly</li>
+            <li>Design for manufacturability under lab constraints</li>
+            <li>User ergonomics and functional usability integration</li>
+        </ul>
+    </section>
+
+    <!-- DELIVERABLES -->
+    <section>
+        <h2>Deliverables</h2>
+
+        <ul>
+            <li>Final CAD assemblies and iterative design revisions</li>
+            <li>Manufacturing and process selection analysis</li>
+            <li>Tolerancing and fit validation documentation</li>
+            <li>Prototype evaluation and refinement cycles</li>
+        </ul>
+
+        <div class="links">
+            <a href="https://youtu.be/y9c9ROYRFO4" target="_blank">▶ Video Demo</a>
+            <a href="../assets/reports/E29Group6FinalReport.pdf" target="_blank">📄 Full Report</a>
+        </div>
+    </section>
+
+    <a class="back" href="../index.html">← Back to Home</a>
+
+</div>
 
 </body>
 </html>

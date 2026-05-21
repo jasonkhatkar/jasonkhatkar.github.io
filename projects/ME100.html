@@ -1,102 +1,246 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>IoT Fall Detection System</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* NAV / BACK */
+        .topbar {
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        .back {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        /* HEADER */
+        .header {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 25px 10px;
+        }
+
+        .header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.6rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            max-width: 700px;
+        }
+
+        /* IMAGE */
+        .hero-img {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 25px;
+        }
+
+        .hero-img img {
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* CONTENT */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 25px 80px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 40px;
+            margin-bottom: 12px;
+            font-size: 1.6rem;
+        }
+
+        p {
+            color: #cbd5e1;
+            margin-bottom: 14px;
+        }
+
+        ul {
+            margin-left: 20px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* HIGHLIGHT BOX */
+        .highlight {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 18px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin-right: 15px;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .links a:hover {
+            opacity: 0.8;
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<h1>IoT Fall Detection System</h1>
+    <!-- BACK -->
+    <div class="topbar">
+        <a class="back" href="../index.html">← Back to Home</a>
+    </div>
 
-<img src="../assets/images/ME100_Prev.jpg" width="500">
+    <!-- TITLE -->
+    <div class="header">
+        <h1>IoT Fall Detection System</h1>
 
-<h2>Overview</h2>
-<p>
-This project is an IoT-enabled fall detection system designed to be embedded into wearable clothing for elderly users.
-The system detects falls using a combination of inertial sensing and proximity sensing, and then triggers alerts and remote notifications to caregivers or authorities.
-</p>
+        <p class="subtitle">
+            Embedded multi-sensor wearable system designed to detect falls in real time and
+            trigger local + IoT-based emergency alerts for elderly users.
+        </p>
+    </div>
 
-<h2>Problem Statement</h2>
-<p>
-Falls among elderly individuals often go undetected, especially if the person is unconscious or unable to call for help.
-The goal of this system is to detect a fall reliably, minimize false positives, and immediately trigger both local and remote alerts.
-</p>
+    <!-- IMAGE -->
+    <div class="hero-img">
+        <img src="../assets/images/ME100_Prev.jpg">
+    </div>
 
-<h2>System Design</h2>
-<p>
-The system combines multiple sensors to improve reliability:
-</p>
+    <!-- CONTENT -->
+    <div class="container">
 
-<ul>
-    <li>MPU6050 accelerometer/gyroscope for tilt and orientation detection</li>
-    <li>Ultrasonic sensor for sudden proximity changes</li>
-    <li>DHT11 temperature sensor for environmental monitoring</li>
-    <li>GT-U7 GPS module for location tracking</li>
-    <li>ESP32 microcontroller for processing and IoT communication</li>
-    <li>NFC tag for storing medical information</li>
-</ul>
+        <h2>Problem</h2>
 
-<h2>Operation Logic</h2>
-<p>
-The system continuously reads sensor data and evaluates fall conditions based on:
-</p>
+        <p>
+            Falls among elderly individuals often go undetected when the user is unconscious or unable to call for help.
+            Existing single-sensor solutions suffer from high false positive rates or unreliable detection in real-world conditions.
+        </p>
 
-<ul>
-    <li>Body tilt exceeding approximately 45 degrees</li>
-    <li>Sudden proximity change detected by ultrasonic sensor</li>
-</ul>
+        <p>
+            The goal of this system was to design a low-cost, wearable embedded solution that improves detection reliability
+            while enabling immediate emergency communication.
+        </p>
 
-<p>
-When a fall is detected:
-</p>
+        <h2>System Overview</h2>
 
-<ul>
-    <li>Temperature and GPS data are transmitted via IoT (Adafruit platform)</li>
-    <li>GPS location is sent via email for emergency response</li>
-    <li>Buzzer and vibration motor are activated to alert the user and surroundings</li>
-</ul>
+        <div class="highlight">
+            Multi-sensor embedded system combining inertial sensing, proximity detection, environmental monitoring,
+            and IoT communication using ESP32.
+        </div>
 
-<p>
-When the user returns to a stable upright position, local alerts stop while emergency data remains available for responders.
-</p>
+        <ul>
+            <li>MPU6050 accelerometer/gyroscope for motion + orientation detection</li>
+            <li>Ultrasonic sensor for sudden proximity change detection</li>
+            <li>DHT11 sensor for environmental temperature monitoring</li>
+            <li>GT-U7 GPS module for real-time location tracking</li>
+            <li>ESP32 microcontroller for real-time processing + IoT communication</li>
+            <li>NFC tag for storing medical information</li>
+        </ul>
 
-<h2>Key Contributions</h2>
-<ul>
-    <li>Integrated 6 different sensors into a unified embedded system</li>
-    <li>Developed logic to reduce false positives using multi-sensor validation</li>
-    <li>Implemented IoT communication for real-time monitoring</li>
-    <li>Designed alert system using vibration and audio feedback</li>
-</ul>
+        <h2>Detection Logic</h2>
 
-<h2>Challenges</h2>
-<p>
-One major challenge was handling inconsistent GPS data formatting and signal acquisition delays, which affected timing in the control loop.
-Additionally, integrating sensors originally designed for Arduino required significant effort in parsing and synchronization.
-</p>
+        <p>
+            Fall detection is triggered when multiple conditions are satisfied simultaneously:
+        </p>
 
-<h2>Outcome</h2>
-<p>
-The final system successfully demonstrated multi-sensor fall detection with reduced false positives compared to single-sensor systems.
-</p>
+        <ul>
+            <li>Body tilt exceeds ~45° threshold (IMU-based detection)</li>
+            <li>Sudden proximity change detected via ultrasonic sensor</li>
+        </ul>
 
-<h2>Demo</h2>
-<p>
-<a href="https://youtu.be/ErTkxw-7A74" target="_blank">
-View Project Video
-</a>
-</p>
+        <p>
+            This multi-sensor validation approach reduces false positives compared to single-sensor systems.
+        </p>
 
-<h2>Report</h2>
-<p>
-<a href="../assets/reports/ME100WriteUp.pdf" target="_blank">
-View Full Project Report
-</a>
-</p>
+        <h2>System Response</h2>
 
+        <ul>
+            <li>ESP32 sends GPS + temperature data via Adafruit IoT platform</li>
+            <li>Email alert sent containing real-time location data</li>
+            <li>Buzzer + vibration motor activated for local alerting</li>
+            <li>System resets alerts when stable upright posture is restored</li>
+        </ul>
 
-<br>
+        <h2>Key Contributions</h2>
 
-<a href="../index.html">← Back to Home</a>
+        <ul>
+            <li>Integrated 6 heterogeneous sensors into a unified embedded system</li>
+            <li>Designed multi-sensor fusion logic to improve reliability</li>
+            <li>Implemented IoT communication pipeline using ESP32</li>
+            <li>Developed real-time alert system with both local + remote response</li>
+        </ul>
+
+        <h2>Challenges</h2>
+
+        <p>
+            Major challenges included inconsistent GPS data formatting and latency in signal acquisition,
+            which impacted real-time synchronization in the control loop.
+        </p>
+
+        <p>
+            Additional integration effort was required to synchronize sensor data streams across different communication protocols.
+        </p>
+
+        <h2>Outcome</h2>
+
+        <div class="highlight">
+            Demonstrated reliable multi-sensor fall detection with significantly reduced false positives
+            compared to single-sensor baseline approaches.
+        </div>
+
+        <h2>Links</h2>
+
+        <div class="links">
+            <a href="https://youtu.be/ErTkxw-7A74" target="_blank">▶ View Demo</a>
+            <a href="../assets/reports/ME100WriteUp.pdf" target="_blank">📄 Full Report</a>
+        </div>
+
+    </div>
 
 </body>
+
 </html>
