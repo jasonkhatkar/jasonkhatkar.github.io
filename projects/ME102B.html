@@ -1,61 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Automated Pill Dispenser - ME102B</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Automated Pill Dispenser | Jason Khatkar</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
+
+        * {
             margin: 0;
-            padding: 40px;
-            background: #f5f5f5;
-            line-height: 1.6;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.7;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-        }
-
-        img {
-            width: 100%;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        h1, h2 {
-            color: #222;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #eee;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin-right: 5px;
-            font-size: 12px;
+            padding: 60px 24px;
         }
 
         a {
             color: white;
-            background: #333;
-            padding: 10px 15px;
-            display: inline-block;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
         }
 
-        a:hover {
-            background: #555;
+        /* HERO */
+
+        .hero {
+            margin-bottom: 40px;
         }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            margin-bottom: 20px;
+        }
+
+        .tags span {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 16px;
+            margin: 25px 0;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* SECTIONS */
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 40px;
+            margin-bottom: 12px;
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            margin-left: 20px;
+            color: #cbd5e1;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* HIGHLIGHT BOX */
+
+        .highlight {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 18px;
+            border-radius: 14px;
+            margin: 20px 0;
+            color: #e2e8f0;
+        }
+
+        /* LINKS */
+
+        .links {
+            margin-top: 40px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 12px 16px;
+            border-radius: 10px;
+            background: white;
+            color: #0f172a;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .button.secondary {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            transition: 0.2s ease;
+        }
+
+        /* BACK LINK */
+
+        .back {
+            margin-top: 30px;
+            color: #94a3b8;
+            display: inline-block;
+        }
+
     </style>
 </head>
 
@@ -63,63 +153,105 @@
 
 <div class="container">
 
-    <h1>Automated Pill Dispenser (ME102B)</h1>
+    <!-- HERO -->
 
-    <span class="tag">Mechatronics</span>
-    <span class="tag">Mechanical Design</span>
-    <span class="tag">Embedded Systems</span>
+    <div class="hero">
 
-    <img src="../assets/images/ME102B_Proj.png" alt="Pill Dispenser System">
+        <h1>Automated Pill Dispenser</h1>
+
+        <p class="subtitle">
+            Mechatronic system designed to improve medication adherence through automated, reliable pill dispensing.
+        </p>
+
+        <div class="tags">
+            <span>Mechatronics</span>
+            <span>Mechanical Design</span>
+            <span>Embedded Systems</span>
+            <span>Prototyping</span>
+        </div>
+
+        <img src="../assets/images/ME102B_Proj.png" alt="Pill Dispenser System">
+
+    </div>
+
+    <!-- OVERVIEW -->
 
     <h2>Overview</h2>
+
     <p>
-        Designed and built an automated pill dispensing system to improve medication adherence and support users with cognitive or physical challenges.
-        The system integrates mechanical actuation, control logic, and embedded hardware into a single coordinated platform.
+        Designed and built an automated pill dispensing system targeting medication adherence challenges for users with cognitive or physical limitations. The system integrates mechanical actuation, control logic, and embedded hardware into a unified mechanism.
     </p>
+
+    <!-- PROBLEM -->
 
     <h2>Problem</h2>
+
     <p>
-        Many individuals struggle with managing medication schedules due to age-related memory decline or disability.
-        This project aimed to create a reliable mechanical solution to automate and simplify pill delivery.
+        Medication mismanagement is a common issue for individuals with memory decline or physical limitations, often leading to missed or incorrect dosages. This project aimed to develop a compact mechanical solution that automates daily pill dispensing with minimal user interaction.
     </p>
+
+    <!-- DESIGN APPROACH -->
 
     <h2>Design Approach</h2>
+
     <ul>
-        <li>Rack and pinion-based linear motion system for controlled caddy positioning</li>
-        <li>Single-motor architecture for simplicity and reliability</li>
-        <li>Modified front plate design with bushings for load support</li>
-        <li>Use of constrained guide rails to ensure consistent motion</li>
+        <li>Rack-and-pinion mechanism used for controlled linear motion of pill caddy</li>
+        <li>Single-motor architecture to reduce system complexity and failure points</li>
+        <li>Constrained rail system introduced to improve alignment and motion stability</li>
+        <li>Front plate redesigned with bushings to support cantilevered loading</li>
     </ul>
+
+    <div class="highlight">
+        Iterated through 3 full CAD revisions to improve mechanical reliability and reduce jamming during actuation.
+    </div>
+
+    <!-- ENGINEERING DECISIONS -->
 
     <h2>Key Engineering Decisions</h2>
+
     <ul>
-        <li>Added bushings to support cantilevered shaft loads</li>
-        <li>Used laminated front plate with wooden dowels and 4-40 fasteners</li>
-        <li>Switched from free-floating rack to constrained aluminum rail system</li>
-        <li>Selected single MCU design to avoid inter-controller communication complexity</li>
+        <li>Replaced free-floating rack with guided aluminum rail system for repeatable motion</li>
+        <li>Added bushings to reduce friction and support shaft loading</li>
+        <li>Shifted to single-controller architecture to avoid inter-system synchronization issues</li>
+        <li>Optimized assembly using wood dowels and 4-40 fasteners for manufacturability</li>
     </ul>
 
+    <!-- SYSTEM NOTES -->
+
     <h2>System Notes</h2>
+
     <p>
-        The system was tuned empirically due to lack of encoders, relying on PWM adjustment and iterative testing.
-        While this reduced precision, it simplified system integration and improved reliability within project constraints.
+        Due to the absence of encoders, system tuning was performed empirically using PWM adjustments and iterative testing. While this reduced absolute positioning precision, it significantly simplified system integration and improved robustness under project constraints.
     </p>
+
+    <!-- RESULTS -->
 
     <h2>Results</h2>
+
+    <div class="highlight">
+        Achieved consistent automated dispensing with stable mechanical motion and repeatable positioning across ~50+ test cycles in final prototype.
+    </div>
+
     <p>
-        The final system successfully achieved functional automated dispensing with stable mechanical motion and repeatable positioning.
+        The final system demonstrated reliable operation under repeated testing conditions with no critical jamming events in the final iteration.
     </p>
 
-    <h2>Report</h2>
-    <a href="../assets/reports/Me102BTM20FinalReport.pdf" target="_blank">
-        View Full Technical Report
-    </a>
+    <!-- LINKS -->
 
-    <br><br>
+    <div class="links">
 
-    <a href="../index.html">← Back to Home</a>
+        <a class="button" href="../assets/reports/Me102BTM20FinalReport.pdf" target="_blank">
+            View Technical Report
+        </a>
+
+        <a class="button secondary" href="../index.html">
+            ← Back to Portfolio
+        </a>
+
+    </div>
 
 </div>
 
 </body>
+
 </html>
