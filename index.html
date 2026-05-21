@@ -1,140 +1,651 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Jason Khatkar - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jason Khatkar | Mechanical Engineering Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
     <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f5f5f5;
-}
 
-header {
-    text-align: center;
-    padding: 40px;
-    background: #222;
-    color: white;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-section {
-    padding: 40px;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
 
-.card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: 0.2s;
-}
+        /* NAVBAR */
 
-.card:hover {
-    transform: translateY(-5px);
-}
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
 
-.card img {
-    width: 100%;
-    border-radius: 8px;
-}
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
 
-.card h3 {
-    margin: 10px 0 5px;
-}
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
 
-.card a {
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: white;
-    background: #333;
-    padding: 8px 12px;
-    border-radius: 5px;
-}
-</style>
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 30px;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 24px;
+            transition: 0.2s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        header {
+            min-height: 88vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+                radial-gradient(circle at top left,
+                rgba(59,130,246,0.25),
+                transparent 30%),
+
+                radial-gradient(circle at bottom right,
+                rgba(168,85,247,0.18),
+                transparent 30%),
+
+                #0f172a;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+
+            font-size: clamp(3rem, 8vw, 5.5rem);
+
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            color: #94a3b8;
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons a {
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 14px;
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+        .primary-btn {
+            background: white;
+            color: #0f172a;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .secondary-btn {
+            border: 1px solid rgba(255,255,255,0.12);
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* GENERAL SECTION */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 30px;
+        }
+
+        section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.3rem;
+            margin-bottom: 24px;
+        }
+
+        /* ABOUT */
+
+        .about p {
+            max-width: 800px;
+            color: #94a3b8;
+            font-size: 1.08rem;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            transition: 0.3s ease;
+
+            backdrop-filter: blur(8px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            border-color: rgba(255,255,255,0.14);
+
+            box-shadow: 0 22px 40px rgba(0,0,0,0.35);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 0.96rem;
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            margin-bottom: 20px;
+        }
+
+        .tags span {
+            display: inline-block;
+
+            padding: 6px 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+
+            background: rgba(255,255,255,0.08);
+
+            border-radius: 999px;
+
+            color: #cbd5e1;
+
+            font-size: 0.8rem;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        .card a:hover {
+            opacity: 0.8;
+        }
+
+        /* CONTACT */
+
+        .contact p {
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+
+            header {
+                min-height: 75vh;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons a {
+                width: 220px;
+            }
+        }
+
+    </style>
+
 </head>
 
 <body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="nav-container">
+
+            <div class="logo">
+                Jason Khatkar
+            </div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+
     <header>
-        <h1>Jason Khatkar</h1>
-        <p>Mechanical Engineer | CAD | Design | Manufacturing</p>
+
+        <div class="hero-content">
+
+            <h1>
+                Mechanical Engineer
+            </h1>
+
+            <p class="hero-subtitle">
+                UC Berkeley Mechanical Engineering graduate focused on design,
+                manufacturing, prototyping, automation, and real-world engineering systems.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="primary-btn">
+                    View Projects
+                </a>
+
+                <a href="Jason_Khatkar_Resume.pdf"
+                   class="secondary-btn"
+                   target="_blank">
+
+                    Resume
+
+                </a>
+
+            </div>
+
+        </div>
+
     </header>
 
-    <hr>
+    <!-- ABOUT -->
 
-    <section>
+    <section id="about" class="about">
+
         <h2>About Me</h2>
+
         <p>
-            Mechanical engineering graduate focused on design, manufacturing, and real-world system building.
+            I specialize in mechanical design, CAD, prototyping,
+            manufacturing, and engineering-focused product development.
+            My experience spans autonomous systems, controls,
+            fabrication, structural design, and real-world hardware
+            projects through coursework, engineering teams,
+            and industry experience.
         </p>
+
     </section>
 
-<section>
-    <h2>Projects</h2>
+    <!-- PROJECTS -->
 
-    <div class="projects">
+    <section id="projects">
 
-    <div class="card">
-        <img src="assets/images/ME102B_Proj.png">
-        <h3>Automated Pill Dispenser</h3>
-        <a href="projects/ME102B.html">View Project</a>
-    </div>
+        <h2>Projects</h2>
 
-    <div class="card">
-        <img src="assets/images/Me136_Prev.png">
-        <h3>Unmanned Autonomous Vehicle Controls</h3>
-        <a href="projects/ME136.html">View Project</a>
-    </div>
+        <div class="projects">
 
-    <div class="card">
-        <img src="assets/images/ME103_Prev.jpg">
-        <h3>Aerofoil Design and Characterization</h3>
-        <a href="projects/ME103.html">View Project</a>
-    </div>
+            <!-- PROJECT 1 -->
 
-    <div class="card">
-        <img src="assets/images/ME130_Prev.gif">
-        <h3>Desk Lifting System</h3>
-        <a href="projects/ME130.html">View Project</a>
-    </div>
-    <div class="card">
-        <img src="assets/images/ME126_Prev.png">
-        <h3>RotoPeel</h3>
-        <a href="projects/ME126.html">View Project</a>
-    </div>
+            <div class="card">
 
-    <div class="card">
-        <img src="assets/images/ME100_Prev.jpg">
-        <h3>Fall Detection Sensor</h3>
-        <a href="projects/ME100.html">View Project</a>
-    </div>
-    <div class="card">
-        <img src="assets/images/E26_Prev.png">
-        <h3>Wind Turbine Design</h3>
-        <a href="projects/E26.html">View Project</a>
-    </div>
+                <img src="assets/images/ME102B_Proj.png">
 
-    <div class="card">
-        <img src="assets/images/E29_Prev.jpg">
-        <h3>Multi-Function Phone Case Production</h3>
-        <a href="projects/E29.html">View Project</a>
-    </div>
-    
+                <div class="card-content">
 
-</div>
-</section>
+                    <h3>Automated Pill Dispenser</h3>
 
-    <section>
+                    <p>
+                        Designed and prototyped an automated medication
+                        dispensing system focused on accessibility,
+                        reliability, and usability.
+                    </p>
+
+                    <div class="tags">
+                        <span>SolidWorks</span>
+                        <span>Prototyping</span>
+                        <span>Manufacturing</span>
+                    </div>
+
+                    <a href="projects/ME102B.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 2 -->
+
+            <div class="card">
+
+                <img src="assets/images/Me136_Prev.png">
+
+                <div class="card-content">
+
+                    <h3>Unmanned Autonomous Vehicle Controls</h3>
+
+                    <p>
+                        Developed control systems and simulations for
+                        autonomous vehicle dynamics and trajectory control.
+                    </p>
+
+                    <div class="tags">
+                        <span>MATLAB</span>
+                        <span>Controls</span>
+                        <span>Simulation</span>
+                    </div>
+
+                    <a href="projects/ME136.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 3 -->
+
+            <div class="card">
+
+                <img src="assets/images/ME103_Prev.jpg">
+
+                <div class="card-content">
+
+                    <h3>Aerofoil Design and Characterization</h3>
+
+                    <p>
+                        Designed and analyzed aerodynamic airfoil
+                        performance through testing and characterization.
+                    </p>
+
+                    <div class="tags">
+                        <span>Aerodynamics</span>
+                        <span>Testing</span>
+                        <span>Analysis</span>
+                    </div>
+
+                    <a href="projects/ME103.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 4 -->
+
+            <div class="card">
+
+                <img src="assets/images/ME130_Prev.gif">
+
+                <div class="card-content">
+
+                    <h3>Desk Lifting System</h3>
+
+                    <p>
+                        Engineered a compact motorized desk lifting
+                        mechanism with integrated mechanical components.
+                    </p>
+
+                    <div class="tags">
+                        <span>Mechanical Design</span>
+                        <span>CAD</span>
+                        <span>Fabrication</span>
+                    </div>
+
+                    <a href="projects/ME130.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 5 -->
+
+            <div class="card">
+
+                <img src="assets/images/ME126_Prev.png">
+
+                <div class="card-content">
+
+                    <h3>RotoPeel</h3>
+
+                    <p>
+                        Developed a kitchen-focused product concept
+                        through market research, prototyping,
+                        and iterative design.
+                    </p>
+
+                    <div class="tags">
+                        <span>Product Design</span>
+                        <span>Manufacturing</span>
+                        <span>Research</span>
+                    </div>
+
+                    <a href="projects/ME126.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 6 -->
+
+            <div class="card">
+
+                <img src="assets/images/ME100_Prev.jpg">
+
+                <div class="card-content">
+
+                    <h3>Fall Detection Sensor</h3>
+
+                    <p>
+                        Built a sensing system capable of detecting
+                        fall events using embedded hardware
+                        and sensor integration.
+                    </p>
+
+                    <div class="tags">
+                        <span>Sensors</span>
+                        <span>Embedded Systems</span>
+                        <span>Hardware</span>
+                    </div>
+
+                    <a href="projects/ME100.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 7 -->
+
+            <div class="card">
+
+                <img src="assets/images/E26_Prev.png">
+
+                <div class="card-content">
+
+                    <h3>Wind Turbine Design</h3>
+
+                    <p>
+                        Designed and evaluated a wind turbine system
+                        with focus on efficiency and energy generation.
+                    </p>
+
+                    <div class="tags">
+                        <span>Energy</span>
+                        <span>Design</span>
+                        <span>Analysis</span>
+                    </div>
+
+                    <a href="projects/E26.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 8 -->
+
+            <div class="card">
+
+                <img src="assets/images/E29_Prev.jpg">
+
+                <div class="card-content">
+
+                    <h3>Multi-Function Phone Case Production</h3>
+
+                    <p>
+                        Developed and manufactured a multi-function
+                        consumer product through collaborative production.
+                    </p>
+
+                    <div class="tags">
+                        <span>Manufacturing</span>
+                        <span>Product Development</span>
+                        <span>Production</span>
+                    </div>
+
+                    <a href="projects/E29.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
         <h2>Contact</h2>
+
         <p>Email: jasonkhat@berkeley.edu</p>
-        <p>Phone: (530)-949-7973</p>
+
+        <p>Phone: (530) 949-7973</p>
+
     </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Jason Khatkar — Mechanical Engineering Portfolio
+
+    </footer>
+
 </body>
+
 </html>
