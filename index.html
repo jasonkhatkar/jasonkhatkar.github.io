@@ -37,21 +37,17 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(10px);
-
             border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: auto;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             padding: 18px 30px;
         }
 
@@ -66,7 +62,6 @@
             color: #cbd5e1;
             text-decoration: none;
             margin-left: 24px;
-            transition: 0.2s ease;
             font-weight: 500;
         }
 
@@ -78,24 +73,15 @@
 
         header {
             min-height: 88vh;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             text-align: center;
-
             padding: 60px 20px;
 
             background:
-                radial-gradient(circle at top left,
-                rgba(59,130,246,0.25),
-                transparent 30%),
-
-                radial-gradient(circle at bottom right,
-                rgba(168,85,247,0.18),
-                transparent 30%),
-
+                radial-gradient(circle at top left, rgba(59,130,246,0.25), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(168,85,247,0.18), transparent 30%),
                 #0f172a;
         }
 
@@ -105,9 +91,7 @@
 
         header h1 {
             font-family: 'Space Grotesk', sans-serif;
-
             font-size: clamp(3rem, 8vw, 5.5rem);
-
             line-height: 1;
             margin-bottom: 24px;
         }
@@ -118,20 +102,14 @@
             margin-bottom: 40px;
         }
 
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
         .hero-buttons a {
             text-decoration: none;
             padding: 14px 24px;
             border-radius: 14px;
             font-weight: 600;
-
             transition: 0.25s ease;
+            display: inline-block;
+            margin: 6px;
         }
 
         .primary-btn {
@@ -152,7 +130,7 @@
             background: rgba(255,255,255,0.08);
         }
 
-        /* GENERAL SECTION */
+        /* SECTION */
 
         section {
             max-width: 1200px;
@@ -166,45 +144,89 @@
             margin-bottom: 24px;
         }
 
-        /* ABOUT */
+        /* =========================
+           FEATURED HERO PROJECTS
+        ========================= */
 
-        .about p {
-            max-width: 800px;
-            color: #94a3b8;
-            font-size: 1.08rem;
+        .featured-project {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 26px;
+            overflow: hidden;
+
+            margin-bottom: 60px;
         }
 
-        /* PROJECTS */
+        .featured-project img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 420px;
+        }
+
+        .featured-content {
+            padding: 40px;
+        }
+
+        .featured-content h3 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .featured-content p {
+            color: #94a3b8;
+            margin-bottom: 18px;
+        }
+
+        .featured-tags {
+            margin-bottom: 20px;
+        }
+
+        .featured-tags span {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+
+        .featured-link {
+            text-decoration: none;
+            font-weight: 600;
+            color: white;
+        }
+
+        .featured-link:hover {
+            opacity: 0.8;
+        }
+
+        /* STANDARD PROJECTS */
 
         .projects {
             display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(320px, 1fr));
-
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .card {
             background: rgba(255,255,255,0.04);
-
             border: 1px solid rgba(255,255,255,0.06);
-
             border-radius: 22px;
-
             overflow: hidden;
-
             transition: 0.3s ease;
-
             backdrop-filter: blur(8px);
         }
 
         .card:hover {
             transform: translateY(-10px);
-
-            border-color: rgba(255,255,255,0.14);
-
-            box-shadow: 0 22px 40px rgba(0,0,0,0.35);
         }
 
         .card img {
@@ -228,54 +250,30 @@
             margin-bottom: 18px;
         }
 
-        .tags {
-            margin-bottom: 20px;
-        }
-
         .tags span {
             display: inline-block;
-
             padding: 6px 12px;
             margin-right: 8px;
             margin-bottom: 8px;
-
             background: rgba(255,255,255,0.08);
-
             border-radius: 999px;
-
             color: #cbd5e1;
-
             font-size: 0.8rem;
         }
 
-        .card a {
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-        }
-
-        .card a:hover {
-            opacity: 0.8;
-        }
-
-        /* CONTACT */
-
-        .contact p {
-            color: #94a3b8;
-            margin-bottom: 10px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #64748b;
-
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
-
         /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .featured-project {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-project img {
+                min-height: 280px;
+            }
+
+        }
 
         @media (max-width: 768px) {
 
@@ -283,111 +281,119 @@
                 display: none;
             }
 
-            section {
-                padding: 70px 20px;
-            }
-
-            header {
-                min-height: 75vh;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-buttons a {
-                width: 220px;
-            }
         }
 
     </style>
-
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-
-    <nav>
-
-        <div class="nav-container">
-
-            <div class="logo">
-                Jason Khatkar
-            </div>
-
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-
+<!-- NAV -->
+<nav>
+    <div class="nav-container">
+        <div class="logo">Jason Khatkar</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
+    </div>
+</nav>
 
-    </nav>
-
-    <!-- HERO -->
-
-    <header>
-
-        <div class="hero-content">
-
-            <h1>
-                Mechanical Engineer
-            </h1>
-
-            <p class="hero-subtitle">
-                UC Berkeley Mechanical Engineering graduate focused on design,
-                manufacturing, prototyping, automation, and real-world engineering systems.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#projects" class="primary-btn">
-                    View Projects
-                </a>
-
-                <a href="Jason_Khatkar_Resume.pdf"
-                   class="secondary-btn"
-                   target="_blank">
-
-                    Resume
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </header>
-
-    <!-- ABOUT -->
-
-    <section id="about" class="about">
-
-        <h2>About Me</h2>
-
-        <p>
-            I specialize in mechanical design, CAD, prototyping,
-            manufacturing, and engineering-focused product development.
-            My experience spans autonomous systems, controls,
-            fabrication, structural design, and real-world hardware
-            projects through coursework, engineering teams,
-            and industry experience.
+<!-- HERO -->
+<header>
+    <div class="hero-content">
+        <h1>Mechanical Engineer</h1>
+        <p class="hero-subtitle">
+            UC Berkeley Mechanical Engineering graduate focused on design, manufacturing, prototyping, automation, and real-world engineering systems.
         </p>
 
-    </section>
+        <div class="hero-buttons">
+            <a href="#projects" class="primary-btn">View Projects</a>
+            <a href="Jason_Khatkar_Resume.pdf" class="secondary-btn" target="_blank">Resume</a>
+        </div>
+    </div>
+</header>
 
-    <!-- PROJECTS -->
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Me</h2>
+    <p style="color:#94a3b8; max-width:800px;">
+        I specialize in mechanical design, CAD, prototyping, manufacturing, and engineering-focused product development.
+    </p>
+</section>
 
-    <section id="projects">
+<!-- FEATURED PROJECT 1 -->
+<section id="projects">
 
-        <h2>Projects</h2>
+    <h2>Featured Engineering Experience</h2>
 
-        <div class="projects">
+    <!-- CRAIN -->
+    <div class="featured-project">
 
-            <!-- PROJECT 1 -->
+        <img src="assets/images/Crain.jpg">
+
+        <div class="featured-content">
+
+            <h3>Crain Walnut Shelling</h3>
+
+            <div class="featured-tags">
+                <span>Industrial Design</span>
+                <span>Failure Analysis</span>
+                <span>CAD</span>
+                <span>Manufacturing</span>
+            </div>
+
+            <p>
+                Mechanical Design Engineer supporting industrial walnut processing systems,
+                focusing on equipment reliability, redesign of failure-prone components,
+                and field-driven iteration under production constraints.
+            </p>
+
+            <a class="featured-link" href="projects/Crain.html">
+                View Case Study →
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- CALSOL -->
+    <div class="featured-project">
+
+        <img src="assets/images/CalSol_Steering.png">
+
+        <div class="featured-content">
+
+            <h3>CALSOL Racing Team</h3>
+
+            <div class="featured-tags">
+                <span>Vehicle Dynamics</span>
+                <span>Systems Engineering</span>
+                <span>Leadership</span>
+                <span>CAD</span>
+            </div>
+
+            <p>
+                Steering & Stability Lead responsible for subsystem design, vehicle dynamics analysis,
+                and integration of steering and stability systems for a formula-style race car.
+            </p>
+
+            <a class="featured-link" href="projects/CalSol.html">
+                View Case Study →
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- STANDARD PROJECTS -->
+
+    <h2 style="margin-top:80px;">Other Projects</h2>
+
+    <div class="projects">
+
+<!-- PROJECT 1 -->
 
             <div class="card">
 
@@ -645,30 +651,21 @@
 
             </div>
 
-        </div>
+    </div>
 
-    </section>
+</section>
 
-    <!-- CONTACT -->
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+    <p style="color:#94a3b8;">Email: jasonkhat@berkeley.edu</p>
+    <p style="color:#94a3b8;">Phone: (530) 949-7973</p>
+</section>
 
-    <section id="contact" class="contact">
-
-        <h2>Contact</h2>
-
-        <p>Email: jasonkhat@berkeley.edu</p>
-
-        <p>Phone: (530) 949-7973</p>
-
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        © 2026 Jason Khatkar — Mechanical Engineering Portfolio
-
-    </footer>
+<!-- FOOTER -->
+<footer style="text-align:center; padding:40px; color:#64748b;">
+    © 2026 Jason Khatkar — Mechanical Engineering Portfolio
+</footer>
 
 </body>
-
 </html>
