@@ -4,208 +4,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>DeskLift | ME130 Mechanical Design Project</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <title>ME136 - Quadcopter Control Lab</title>
 
     <style>
 
         body {
             margin: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: Arial, sans-serif;
             background: #0f172a;
             color: #e2e8f0;
             line-height: 1.6;
         }
 
-        nav {
-            padding: 18px 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(10px);
-        }
-
-        nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            color: white;
-        }
-
         .container {
             max-width: 1000px;
             margin: auto;
-            padding: 60px 30px;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            padding: 60px 20px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
 
-        .subtitle {
+        h2 {
+            margin-top: 40px;
+            font-size: 1.5rem;
+            border-left: 4px solid #60a5fa;
+            padding-left: 10px;
+        }
+
+        p, li {
             color: #94a3b8;
-            margin-bottom: 40px;
         }
 
         img {
             width: 100%;
-            border-radius: 16px;
-            margin: 30px 0;
+            border-radius: 12px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 40px 0;
+        ul {
+            padding-left: 20px;
+        }
+
+        .meta {
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 40px;
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            text-decoration: underline;
         }
 
         .card {
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px;
-            padding: 20px;
-        }
-
-        ul {
-            color: #cbd5e1;
-        }
-
-        p {
-            color: #94a3b8;
-        }
-
-        .highlight {
-            background: rgba(255,255,255,0.06);
-            border-left: 3px solid white;
-            padding: 12px 16px;
-            margin: 20px 0;
-            color: #e2e8f0;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 18px;
+            padding: 18px;
             border-radius: 12px;
-            background: white;
-            color: #0f172a;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .btn:hover {
-            opacity: 0.85;
+            margin-top: 15px;
         }
 
     </style>
-
 </head>
 
 <body>
 
-<nav>
-    <a href="../index.html">← Back to Portfolio</a>
-</nav>
-
 <div class="container">
 
-    <h1>DeskLift</h1>
-    <p class="subtitle">
-        Motorized ergonomic desk platform using a four-bar linkage system (ME130 Mechanical Design Project)
+    <!-- HEADER -->
+    <h1>ME136 – Quadcopter Estimation & Control</h1>
+
+    <p class="meta">
+        MATLAB-based control systems project focused on quadcopter state estimation, sensor fusion,
+        and hierarchical flight control design.
     </p>
 
-    <img src="../assets/images/ME130_Prev.gif">
+    <img src="../assets/images/ME136_Prev.png" alt="Quadcopter simulation environment">
 
-    <h2>Project Overview</h2>
-
+    <!-- OVERVIEW -->
+    <h2>Overview</h2>
     <p>
-        DeskLift is a motorized mechanical system designed to improve ergonomic workspace efficiency by enabling dynamic repositioning of a desk surface.
-        The system allows a user to switch between a flat workspace and an elevated platform for improved accessibility and organization.
+        Developed a full simulation and control pipeline for a quadcopter system with the goal of improving
+        hover stability and trajectory tracking. Focused on integrating sensor fusion, state estimation,
+        and multi-layer control architecture.
     </p>
 
-    <div class="highlight">
-        Designed a motor-driven four-bar linkage system achieving up to ~95° motion with stable toggle behavior and rapid actuation.
+    <!-- MY ROLE -->
+    <h2>My Contributions</h2>
+
+    <div class="card">
+        <ul>
+            <li>Developed simulation and control logic for quadcopter dynamics in MATLAB</li>
+            <li>Implemented sensor fusion and state estimation using IMU and optical flow data</li>
+            <li>Designed and tuned hierarchical control loops (position → velocity → attitude)</li>
+            <li>Analyzed system performance and produced simulation results for reporting</li>
+        </ul>
     </div>
 
-    <h2>Engineering Approach</h2>
+    <!-- SYSTEM -->
+    <h2>System Architecture</h2>
 
-    <div class="grid">
-
-        <div class="card">
-            <h3>Mechanical System</h3>
-            <ul>
-                <li>Four-bar linkage with toggle positions</li>
-                <li>Plywood frame with aluminum reinforcement</li>
-                <li>Gear reduction (4:1) for torque amplification</li>
-                <li>Designed for stable motion under load</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Controls & Electronics</h3>
-            <ul>
-                <li>ESP32 microcontroller system</li>
-                <li>DC geared motor with encoder feedback</li>
-                <li>Push-button actuation control</li>
-                <li>Integrated power supply module</li>
-            </ul>
-        </div>
-
+    <div class="card">
+        <ul>
+            <li>IMU-based attitude estimation (gyro integration + accelerometer correction)</li>
+            <li>Optical flow–based velocity estimation with height correction</li>
+            <li>Position estimation via integrated velocity model</li>
+            <li>Closed-loop hierarchical control structure</li>
+        </ul>
     </div>
 
-    <h2>Key Performance Metrics</h2>
+    <!-- IMPROVEMENTS -->
+    <h2>Key Engineering Improvements</h2>
 
-    <ul>
-        <li>Load capacity: ~5–8 lbs</li>
-        <li>Motion range: 0°–95°</li>
-        <li>Actuation time: ~1–4 seconds</li>
-        <li>Maximum structural deflection: ~0.5 mm (worst case analysis)</li>
-        <li>Maximum stress: ~44 MPa (below 57.9 MPa material yield)</li>
-    </ul>
+    <div class="card">
+        <ul>
+            <li>Introduced position control layer to improve hover stability</li>
+            <li>Tuned control gains to reduce overshoot and oscillations</li>
+            <li>Improved velocity estimation robustness under sensor noise</li>
+            <li>Enhanced overall stability through iterative parameter tuning</li>
+        </ul>
+    </div>
 
-    <h2>Analysis & Validation</h2>
+    <!-- RESULTS -->
+    <h2>Results</h2>
+
+    <div class="card">
+        <p>
+            Achieved approximately <b>72 seconds of stable simulated flight</b> before instability due to
+            accumulated sensor drift and optical flow noise.
+        </p>
+
+        <p>
+            Performance was primarily limited by estimator accuracy rather than controller design,
+            highlighting the importance of sensor fusion robustness in real-world systems.
+        </p>
+    </div>
+
+    <!-- LIMITATIONS -->
+    <h2>Key Limitations</h2>
+
+    <div class="card">
+        <ul>
+            <li>Optical flow noise introduced drift in velocity estimation</li>
+            <li>Position error accumulated over long-duration simulation</li>
+            <li>System performance bounded by estimator rather than control design</li>
+        </ul>
+    </div>
+
+    <!-- REPORT -->
+    <h2>Report</h2>
 
     <p>
-        The system was validated through both kinematic modeling and structural analysis.
-        Motion behavior was tuned to ensure stable transition between two toggle positions,
-        balancing speed with mechanical loading during acceleration phases.
+        <a href="../assets/reports/ME136_Lab_5_Report.pdf" target="_blank" style="color:#60a5fa;">
+            View Full Technical Report (PDF)
+        </a>
     </p>
 
-    <p>
-        Structural evaluation assumed a ~1.5 kg applied load, with results confirming safe operation
-        below material yield limits under worst-case loading conditions.
-    </p>
-
-    <h2>Key Challenges</h2>
-
-    <ul>
-        <li>Managing dynamic loads during rapid motion transitions</li>
-        <li>Calibration differences between unloaded and loaded motor behavior</li>
-        <li>Achieving reliable motion without complex sensing systems</li>
-    </ul>
-
-    <h2>Outcome</h2>
-
-    <p>
-        DeskLift demonstrates a compact electromechanical system integrating structural design, actuation, and control.
-        The final prototype achieved stable lifting motion with repeatable toggle behavior and validated structural safety margins.
-    </p>
-
-    <a class="btn" href="../assets/reports/ME130FinalProject.pdf" target="_blank">
-        View Full Report
-    </a>
+    <a class="back" href="../index.html">← Back to Home</a>
 
 </div>
 
 </body>
-
 </html>
