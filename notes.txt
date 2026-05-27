@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jason Khatkar | Mechanical Engineering Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 30px;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 24px;
+            transition: 0.2s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        header {
+            min-height: 88vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+                radial-gradient(circle at top left,
+                rgba(59,130,246,0.25),
+                transparent 30%),
+
+                radial-gradient(circle at bottom right,
+                rgba(168,85,247,0.18),
+                transparent 30%),
+
+                #0f172a;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+
+            font-size: clamp(3rem, 8vw, 5.5rem);
+
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            color: #94a3b8;
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons a {
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 14px;
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+        .primary-btn {
+            background: white;
+            color: #0f172a;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .secondary-btn {
+            border: 1px solid rgba(255,255,255,0.12);
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* GENERAL SECTION */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 30px;
+        }
+
+        section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.3rem;
+            margin-bottom: 24px;
+        }
+
+        /* ABOUT */
+
+        .about p {
+            max-width: 800px;
+            color: #94a3b8;
+            font-size: 1.08rem;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            transition: 0.3s ease;
+
+            backdrop-filter: blur(8px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            border-color: rgba(255,255,255,0.14);
+
+            box-shadow: 0 22px 40px rgba(0,0,0,0.35);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 0.96rem;
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            margin-bottom: 20px;
+        }
+
+        .tags span {
+            display: inline-block;
+
+            padding: 6px 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+
+            background: rgba(255,255,255,0.08);
+
+            border-radius: 999px;
+
+            color: #cbd5e1;
+
+            font-size: 0.8rem;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        .card a:hover {
+            opacity: 0.8;
+        }
+
+        /* CONTACT */
+
+        .contact p {
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+
+            header {
+                min-height: 75vh;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons a {
+                width: 220px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="nav-container">
+
+            <div class="logo">
+                Jason Khatkar
+            </div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <header>
+
+        <div class="hero-content">
+
+            <h1>
+                Mechanical Engineer
+            </h1>
+
+            <p class="hero-subtitle">
+                UC Berkeley Mechanical Engineering graduate focused on design,
+                manufacturing, prototyping, automation, and real-world engineering systems.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="primary-btn">
+                    View Projects
+                </a>
+
+                <a href="Jason_Khatkar_Resume.pdf"
+                   class="secondary-btn"
+                   target="_blank">
+
+                    Resume
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ABOUT -->
+
+    <section id="about" class="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I specialize in mechanical design, CAD, prototyping,
+            manufacturing, and engineering-focused product development.
+            My experience spans autonomous systems, controls,
+            fabrication, structural design, and real-world hardware
+            projects through coursework, engineering teams,
+            and industry experience.
+        </p>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+            <!-- PROJECT 1 -->
+
+            <div class="card">
+
+                <img src="assets/images/ME102B_Proj.png">
+
+                <div class="card-content">
+
+                    <h3>Automated Pill Dispenser</h3>
+
+                    <p>
+                       <p>
+                            Designed and prototyped an automated medication dispensing system to 
+                            improve adherence for users with memory-related challenges. Iterated 
+                            through 3 CAD revisions to improve reliability and reduce jamming. 
+                            Validated consistent dispensing over ~50 prototype test cycles.
+                       </p>
+
+                    <div class="tags">
+                        <span>SolidWorks</span>
+                        <span>Rapid Prototyping</span>
+                        <span>DFM</span>
+                        <span>Mechanism Design</span>
+                    </div>
+
+                    <a href="projects/ME102B.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 2 -->
+
+            <div class="card">
+
+                <img src="assets/images/Me136_Prev.png">
+
+                <div class="card-content">
+
+                    <h3>Unmanned Autonomous Vehicle Controls</h3>
+
+                    <p>
+                        Developed C++-based control system simulations for an autonomous vehicle
+                         focused on stability and trajectory tracking. Tuned controller gains 
+                         through iterative testing to improve response time and reduce overshoot. 
+                         Evaluated performance under multiple disturbance scenarios.
+                    </p>
+
+                    <div class="tags">
+                        <span>C++</span>
+                        <span>Feedback Control Systems</span>
+                        <span>Dynamic Modeling</span>
+                        <span>Simulation</span>
+                    </div>
+
+                    <a href="projects/ME136.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 3 -->
+
+            <div class="card">
+
+                <img src="assets/images/ME103_Prev.jpg">
+
+                <div class="card-content">
+
+                    <h3>Aerofoil Design and Characterization</h3>
+
+                    <p>
+                        Designed and tested airfoil geometries to evaluate lift and drag 
+                        performance across varying angles of attack. Compared experimental wind 
+                        tunnel results with theoretical predictions. Identified performance 
+                        trends near stall conditions and quantified model deviation.
+                    </p>
+
+                    <div class="tags">
+                        <span>Aerodynamics</span>
+                        <span>Experimental Testing</span>
+                        <span>Data Analysis</span>
+                        <span>Fluid Mechanics</span>
+                    </div>
+
+                    <a href="projects/ME103.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 4 -->
+
+            <div class="card">
+
+                <img src="assets/images/ME130_Prev.gif">
+
+                <div class="card-content">
+
+                    <h3>Desk Lifting System</h3>
+
+                    <p>
+                        Engineered a motorized desk lifting mechanism integrating structural 
+                        design, actuation, and load-bearing components. Designed CAD-based 
+                        linkage system for stable vertical motion under load. Iterated geometry
+                         to reduce binding and improve mechanical stability.
+                    </p>
+
+                    <div class="tags">
+                        <span>Mechanical Design</span>
+                        <span>CAD</span>
+                        <span>Actuation Systems</span>
+                        <span>Structural Design</span>
+                    </div>
+
+                    <a href="projects/ME130.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 5 -->
+
+            <div class="card">
+
+                <img src="assets/images/ME126_Prev.png">
+
+                <div class="card-content">
+
+                    <h3>RotoPeel</h3>
+
+                    <p>
+                        Developed a consumer kitchen product through full-cycle design including 
+                        research, CAD modeling, and prototyping. Identified usability 
+                        inefficiencies in manual peeling workflows and translated them into 
+                        functional design requirements. Iterated on ergonomics and 
+                        manufacturability through multiple prototypes.
+                    </p>
+
+                    <div class="tags">
+                        <span>Product Design</span>
+                        <span>User-Centered Design</span>
+                        <span>Rapid Prototyping</span>
+                        <span>DFM</span>
+                    </div>
+
+                    <a href="projects/ME126.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 6 -->
+
+            <div class="card">
+
+                <img src="assets/images/ME100_Prev.jpg">
+
+                <div class="card-content">
+
+                    <h3>Fall Detection Sensor</h3>
+
+                    <p>
+                        Built an embedded accelerometer-based system for real-time fall detection 
+                        using signal processing and threshold logic. Tuned detection sensitivity
+                         to balance false positives and missed events. Validated performance 
+                         through controlled prototype testing scenarios.
+                    </p>
+
+                    <div class="tags">
+                        <span>Embedded Systems</span>
+                        <span>Signal Processing</span>
+                        <span>Python</span>
+                        <span>Prototyping</span>
+                    </div>
+
+                    <a href="projects/ME100.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 7 -->
+
+            <div class="card">
+
+                <img src="assets/images/E26_Prev.png">
+
+                <div class="card-content">
+
+                    <h3>Wind Turbine Design</h3>
+
+                    <p>
+                        Designed and analyzed a small-scale wind turbine system focused on 
+                        aerodynamic efficiency and energy conversion. Modeled blade geometry 
+                        and evaluated theoretical power output under varying wind conditions. 
+                        Compared predicted and observed performance under lab testing conditions.
+                    </p>
+
+                    <div class="tags">
+                        <span>Energy Systems</span>
+                        <span>Aerodynamics</span>
+                        <span>Structural Analysis</span>
+                        <span>Experimental Validation</span>
+                    </div>
+
+                    <a href="projects/E26.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 8 -->
+
+            <div class="card">
+
+                <img src="assets/images/E29_Prev.jpg">
+
+                <div class="card-content">
+
+                    <h3>Multi-Function Phone Case Production</h3>
+
+                    <p>
+                        Developed a multi-function consumer product through CAD design, 
+                        prototyping, and manufacturing workflow planning. Optimized design for 
+                        manufacturability and reduced assembly complexity through iterative 
+                        refinement. Supported small-batch production and assembly validation.
+                    </p>
+
+                    <div class="tags">
+                        <span>Manufacturing</span>
+                        <span>Product Development</span>
+                        <span>CAD</span>
+                        <span>Production Design</span>
+                    </div>
+
+                    <a href="projects/E29.html">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <h2>Contact</h2>
+
+        <p>Email: jasonkhat@berkeley.edu</p>
+
+        <p>Phone: (530) 949-7973</p>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Jason Khatkar — Mechanical Engineering Portfolio
+
+    </footer>
+
+</body>
+
+</html>
